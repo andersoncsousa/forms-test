@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form-Termo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 26px;
+            font-weight: 700;
+            color: blue;
+            text-align: center;
+            padding: 2%;
+        }
+        .control{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <header>
+                <h1 class="">Form Termo</h1>
+            </header>
+            <form action="https://formspree.io/site@prazeresdamesa.com.br" method="post">
+                <div class="control">
+                    <label for="nome">
+                        Nome:
+                        <input type="text" name="name">
+                    </label>
+                </div>
+
+                <div class="control">
+
+                    <label for="tel">
+                        Telefone/Celular:
+                        <input type="tel" name="tel" id="">
+                    </label>
+                </div>
+        
+                <div class="file has-name is-boxed">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="file" id="file">
+                        <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            Logo do expositor…
+                        </span>
+                        </span>
+                        <span class="file-name" id="filename">
+                        
+                        </span>
+                    </label>
+                </div>
+
+                <div class="control">
+                    <h2 class="is-medium"> Termos e condições: </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequuntur corrupti modi temporibus tenetur vitae 
+                        distinctio ullam sequi! Sunt labore nulla natus aliquam aspernatur perspiciatis consectetur explicabo nesciunt aut recusandae! 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequuntur corrupti modi temporibus tenetur vitae 
+                        distinctio ullam sequi! Sunt labore nulla natus aliquam aspernatur perspiciatis consectetur explicabo nesciunt aut recusandae!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequuntur corrupti modi temporibus tenetur vitae 
+                        distinctio ullam sequi! Sunt labore nulla natus aliquam aspernatur perspiciatis consectetur explicabo nesciunt aut recusandae! 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae consequuntur corrupti modi temporibus tenetur vitae 
+                        distinctio ullam sequi! Sunt labore nulla natus aliquam aspernatur perspiciatis consectetur explicabo nesciunt aut recusandae!
+                    </p>
+                </div>
+
+                <div class="control">
+                    <label class="checkbox" onclick="verificaBox()">
+                        <input type="checkbox" name="checkbox" id="check" >
+                        Eu aceito os termo e condições.
+                    </label>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-success">Enviar</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is">Cancelar</button>
+                    </div>
+                </div>
+        </div>
+    </section>
+        
+    </form>
+    <script>
+        var checkT = document.getElementById('check')
+        var checkStyle = document.getElementsByClassName('checkbox')
+
+        function verificaBox(){
+            if(!checkT.checked === true){
+                console.log('pooooow')
+                checkStyle.style.color = "#00BFFF"
+            } else {
+                checkT.focus()
+            }
+        }
+        //recupera o arquivo buscado 
+        var file = document.getElementById("file")
+        file.onchange = function(){
+            if(file.files.length > 0){
+                document.getElementById('filename').innerHTML = file.files[0].name
+            }
+        }
+    </script>
+</body>
+</html>
